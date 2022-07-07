@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#water {
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(214, 100%, 50%, 0.315);
+    z-index: -10;
+}
+
+.water-layers {
+    position: absolute;
+    z-index: -1;
+}
+
+#water-layer-1 {
+    width: 100vw;
+    height: 70vh;
+    background-color: hsla(229, 100%, 50%, 0.247);
+    bottom: 0;
+    box-shadow: 0 -50px 30px 250px hsla(229, 100%, 50%, 0.267);
+    z-index: -9;
+}
+
+#water-layer-2 {
+    width: 100vw;
+    height: 50vh;
+    background-color: hsla(229, 100%, 50%, 0.411);
+    bottom: 0;
+    box-shadow: 0 -50px 30px 200px hsla(229, 100%, 50%, 0.39);
+    z-index: -8;
+}
+
+#water-layer-3 {
+    width: 100vw;
+    height: 30vh;
+    background-color: hsla(229, 100%, 50%, 0.404);
+    bottom: 0;
+    box-shadow: 0 -50px 30px 300px hsla(229, 100%, 50%, 0.404);
+    z-index: -7;
+}
+
+#sand {
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    background-color: hsla(19, 48%, 32%, 0.925);
+    bottom: 0;
+    box-shadow: 0 -20px 30px 50px hsla(19, 48%, 32%, 0.938);
+}
+
+#light-sand {
+    position: inherit;
+    width: 100vw;
+    height: 5vh;
+    background-color: hsla(19, 62%, 24%, 0.397);
+    bottom: 0;
+    box-shadow: 0 -20px 20px 80px hsla(19, 62%, 24%, 0.397);
+}
+
+.rocks {
+    position: inherit;
+}
+
+#rock-1 {
+    width: 120px;
+    height: 80px;
+    background-color: #613809;
+    border-radius: 40px 60px 30px 20px;
+    top: -20px;
+    transform: skewX(-10deg);
+    box-shadow: 0 0 20px 0 #613809;
+}
+
+#rock-2 {
+    width: 50px;
+    height: 60px;
+    background-color: #5e3f1dc7;
+    border-radius: 60px 20px 60px 20px;
+    top: -105px;
+    right: 20px;
+    transform: skewX(-10deg) rotate(70deg);
+    box-shadow: 0 0 20px 0 #5e3f1dc7;
+}
+
+#rock-3 {
+    width: 80px;
+    height: 60px;
+    background-color: #5a3710a8;
+    border-radius: 40px 60px 20px 30px;
+    top: -50px;
+    right: 250px;
+    transform: skewX(-15deg);
+    box-shadow: 0 0 20px 0 #5a3710a8;
+}
+
+#rock-4 {
+    width: 90px;
+    height: 70px;
+    background-color: #633808;
+    border-radius: 40px 50px 30px 60px;
+    top: -95px;
+    left: 100px;
+    transform: skewX(-10deg) rotate(0deg);
+    box-shadow: 0 0 20px 0 #633808;
+    z-index: 3;
+}
+
+#rock-5 {
+    width: 80px;
+    height: 60px;
+    background-color: #5a3710a8;
+    border-radius: 40px 60px 20px 30px;
+    top: -40px;
+    right: 185px;
+    transform: skewX(-15deg) rotate(100deg);
+    box-shadow: 0 0 20px 0 #5a3710a8;
+}
+
+#rock-6 {
+    width: 50px;
+    height: 50px;
+    background-color: #633808;
+    border-radius: 40px 50px 30px 20px;
+    top: -80px;
+    left: 190px;
+    transform: skewX(-10deg);
+    box-shadow: 0 0 20px 0 #633808;
+    z-index: 2;
+}
+
+.fish {
+    width: 8vw;
+    height: 4vw;
+    background-color: orange;
+    position: absolute;
+    border-radius: 44%;
+    position: absolute;
+    bottom: 300px;
+    right: 100px;
+}
+.tail {
+    position: absolute;
+    left: 100%;
+    display: inline-block;
+    width: 4vw;
+    height: 2vw;
+}
+.tail::before,
+.tail::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    background-color: orange;
+    border-radius: 50%;
+    top: 50%;
+    transform-origin: left;
+}
+.tail::before {
+    transform: rotate(-25deg) translatex(-12px);
+}
+.tail::after {
+    transform: rotate(25deg) translatex(-12px);
+}
+.fish::before {
+    content: "";
+    background-color: #212121;
+    border-radius: 100%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    box-shadow: 0 1px 0px 1px #ffffffb3;
+}
+
+#fish2 {
+    top: 500px;
+    right: 350px;
+    background-color: rgb(255, 208, 0);
+    transform: rotate(180deg);
+}
+#fish2 .tail::before,
+#fish2 .tail::after {
+    background-color: rgb(255, 208, 0);
+}
+
+#fish3 {
+    top: 350px;
+    left: 100px;
+    background-color: hsla(115, 67%, 45%, 0.897);
+}
+#fish3 .tail::before,
+#fish3 .tail::after {
+    background-color: hsla(115, 67%, 45%, 0.897);
+}
+
+#fish4 {
+    top: 400px;
+    right: 200px;
+    background-color: rgb(101, 17, 211);
+}
+#fish4 .tail::before,
+#fish4 .tail::after {
+    background-color: rgb(101, 17, 211);
+}
+
+ .large-fish {
+    width: 100px;
+    height: 125px;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #dd741e;
+    transform: rotateX(55deg);
+    background: #dd741e;
+    top: 350px;
+    left: 150px;
+    transition: animation linear;
+    animation: 7s large-fish-move-right;
+}
+
+.large-fish .fish-tail {
+    width: 44px;
+    height: 83px;
+    position: absolute;
+    border-radius: 50%;
+    border-right: 12px solid black;
+    left: -3.6rem;
+    bottom: 1.5rem;
+}
+
+.large-fish .eye {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    transform: rotateY(59deg);
+    top: 2rem;
+    left: 3.5rem;
+}
+
+.large-fish .eye::after {
+    content: "";
+    background: white;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 9px;
+    top: 12px;
+}
+
+ .large-fish .eye span {
+    top: 4px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #321013;
+    border-radius: 50%;
+    left: 7px;
+}
+
+.fish-neck {
+    filter: brightness(0.9);
+    border-radius: 50%;
+    width: 30px;
+    height: 45px;
+    border: 3px solid #dd741e;
+    transform: rotateX(30deg);
+    position: absolute;
+    border-left-color: #dd741e;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.large-fish .fish-shell {
+    display: flex;
+    flex-direction: column;
+}
+
+.large-fish .fish-shell .shell-1 {
+    top: -11px;
+    margin-left: 45px;
+}
+
+.large-fish .fish-shell .shell-2 {
+    top: 20px;
+    margin-left: 45px;
+}
+
+.large-fish .fish-shell .shell-3 {
+    top: 54px;
+    margin-left: 45px;
+}
+
+.large-fish .fish-shell .shell-4 {
+    top: 81px;
+    margin-left: 45px;
+}
+
+.large-fish .fish-shell .shell-5 {
+    top: -7px;
+    margin-left: 30px;
+}
+
+.large-fish .fish-shell .shell-6 {
+    top: 26px;
+    margin-left: 29px;
+}
+
+.large-fish .fish-shell .shell-7 {
+    top: 55px;
+    margin-left: 30px;
+}
+.large-fish .fish-shell .shell-8 {
+    top: 83px;
+    margin-left: 31px;
+}
+
+#large-fish-2 {
+    height: 100px;
+    position: absolute;
+    top: 550px;
+    background-color: #c446dd;
+    border-color: #c446dd;
+    transition: animation linear;
+    animation: 7s large-fish-move-left forwards infinite;
+    transform: rotate(180deg);
+}
+
+#large-fish-2 .fish-neck {
+    border-left-color: #d498e0;
+}
+
+#fish1 {
+    transition: animation ease-in;
+    animation: 5s small-fish-move-left forwards,
+    5s small-fish-move-right 5s forwards infinite;
+}
+
+#fish2 {
+    transition: animation ease-in;
+    animation: 7s small-fish-move-right forwards infinite;
+}
+
+#fish3 {
+    transition: animation ease-in;
+    animation: 20s move-right forwards infinite;
+}
+
+#fish4 {
+    transition: animation ease-in;
+    animation: 15s move-left  forwards infinite;
+}
+
+
+/* Animations */
+@keyframes large-fish-move-left {
+    from {
+        left: 80%;
+    }
+    to {
+        left: 10%;
+
+    }
+}
+
+@keyframes large-fish-move-right {
+    from {
+        left: 10%;
+    }
+    to {
+        left: 80%;
+    }
+}
+
+@keyframes small-fish-move-left {
+    from {
+        right: 10%;
+    }
+    to {
+        right: 90%;
+    }
+}
+
+@keyframes small-fish-move-right {
+    from {
+        right: 80%;
+        transform: rotate(180deg);
+    }
+    to {
+        right: 10%;
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes move-right {
+    from {
+        left: 10%;
+        transform: rotate(180deg);
+    }
+
+    to {
+        left: 90%;
+        transform: rotate(180deg);
+    }
+ 
+}
+@keyframes move-left {
+    from {
+        right: 10%;
+    }
+
+    to {
+        right: 90%;
+    }
+ 
+}
